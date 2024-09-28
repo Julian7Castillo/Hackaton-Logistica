@@ -1,0 +1,55 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="{{url_for('authentication.index')}}"><img src="{{url_for('static',filename='images/logo.jpeg')}}" alt="logo"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        {% if current_user.is_authenticated %}
+            <ul class="nav navbar-nav">
+                <li><a href="{{url_for('authentication.compras')}}">Compras</a></li>
+                <li><a href="{{url_for('authentication.graficas')}}">Graficos</a></li>
+                <li><a href="{{url_for('authentication.ia')}}">IA</a></li>
+            </ul>
+        {% endif %}
+
+        <ul>
+            {% if current_user.is_authenticated %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ url_for('authentication.register_user') }}">
+                            <span class="glyphicon glyphicon-user"></span>
+                            usuario: {{ current_user.user_name.title() }}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link-activate" href="{{url_for('authentication.log_out_user') }}">
+                            <span class="glyphicon glyphicon-log-in"></span> 
+                            logout
+                        </a>
+                    </li>
+                </ul>
+            {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ url_for('authentication.register_user') }}">
+                            <span class="glyphicon glyphicon-user"></span>
+                            Registrarse
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('authentication.log_in_user') }}">
+                            <span class="glyphicon glyphicon-log-in"></span> 
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>

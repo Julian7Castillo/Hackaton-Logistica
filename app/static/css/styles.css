@@ -1,0 +1,214 @@
+/*generales*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+
+main{
+    min-height: 80vh;
+}
+
+img{
+    max-width: 5rem;
+    margin: 1rem;
+}
+
+/*utilidades*/
+
+.flex{
+    display: flex;
+}
+
+.text-c-h{
+    text-align: center;
+    margin: 0px;
+}
+
+.withoutstile-text{
+    text-decoration: none;
+    list-style: none;
+}
+
+.center{
+    justify-content: center;
+    align-content: center;
+    margin: auto auto;
+}
+
+.contenedor{
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+.seccion{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.fw-300{
+    font-weight: 300;
+}
+
+.response-row{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/*mas sobre agro industria*/
+.iconos-nosotros{
+    /*disposision de los elementos*/
+    display: flex;
+    /*distribucion de elementos de manera equilibrada*/
+    justify-content: space-evenly;
+}
+
+.icono2{ 
+    /*distribuir equitativamente el espacion de los elementos hijo*/
+    flex-basis: calc(25% - 1rem);
+    text-align: center;
+    /* border: solid 1px #292929; */
+    border-radius: 1rem;
+    margin: .5rem;
+    min-width: 20rem;
+    width: 20rem;
+}
+.icono2 img{
+    min-width: 25rem;
+    border-radius: 1rem;
+    width: 100%;
+    object-fit: cover;
+}
+.icono2 h3{
+    /*Selecciona el texto para que quede en mayuscula tambien se puede en minuscula entre otros*/
+    text-transform: uppercase;
+    color: #fff;
+    text-align: start;
+    
+    background: #292929bb;
+    padding-left: 1.2rem;
+    margin: auto;
+    padding: 2rem;
+}
+
+.icono{ 
+    /*distribuir equitativamente el espacion de los elementos hijo*/
+    flex-basis: calc(33.33% - 1rem);
+    text-align: center;
+    border: solid 1px #292929;
+    border-radius: 1rem;
+    margin: .5rem;
+    min-width: 10rem;
+    min-width: 35rem;
+}
+.icono h3{
+    /*Selecciona el texto para que quede en mayuscula tambien se puede en minuscula entre otros*/
+    text-transform: uppercase;
+}
+
+.icono img{
+    min-width: 20rem;
+    object-fit: cover;
+}
+
+.separacion{
+    display: grid;
+    grid-auto-columns: 40% 40%;
+    gap: 1rem;
+}
+
+.max50{
+    max-width: 100vh / 2;
+}
+
+/*footer*/
+footer{
+    background: #292929;
+    color: #fff;
+    padding: 60px 80px 10px 80px;
+    text-align: left;
+    margin: 2rem 2rem 0rem 2rem;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+footer a{
+    color: #d3d3d3;
+}
+
+footer img{
+    width: 100%;
+}
+
+footer svg{
+    margin: 1rem;
+}
+
+footer li{
+    list-style: none;
+    text-decoration: none;
+}
+
+.foot{
+    flex-flow: column wrap;
+    flex: 1;
+    margin-bottom: 4rem;
+    
+    text-align: center;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario{
+    max-width: 80%;
+    margin:5rem auto;
+}
+
+/*carrusel*/
+.img-carrusel{
+    object-fit: cover;
+
+}
+
+/*card*/
+figure {
+    display: grid;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  figure > * {
+    grid-area: 1/1;
+    transition: .4s;
+  }
+  figure figcaption {
+    display: grid;
+    align-items: start;
+    font-family: sans-serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #fff;
+    background: var(--c,#0009);
+    clip-path: inset(0 var(--_i,100%) 0 0);
+    -webkit-mask:
+      linear-gradient(#fff 1 1),
+      linear-gradient(#fff 1 1);
+    -webkit-mask-composite: xor;
+    -webkit-mask-clip: text, padding-box;
+    margin: -1px;
+  }
+  figure:hover figcaption{
+    --_i: 0%;
+  }
+  figure:hover img {
+    transform: scale(1.5);
+  }
+  @supports not (-webkit-mask-clip: text) {
+    figure figcaption {
+     -webkit-mask: none;
+     color: #fff;
+    }
+  }
