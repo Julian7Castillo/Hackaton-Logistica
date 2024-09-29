@@ -1,5 +1,17 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h2 class="text-c-h">Graficas</h2>
+    <h2 class="text-c-h"><strong>Graficas</strong></h2>
+    
+    <div class="container" >
+        <h2>Grafica:  violaciones de calidad</h2>
+        <p>Grafica de Tipos de Instalaciones con mayor PROMEDIO de violaciones de calidad</p>
+        <img class="grafica" src="{{ url_for('authentication.grafiacar') }}" alt="Gráfico Matplotlib">
+        <h2>Tabla: Datos estadisticos</h2>
+        <p>Tabla de datos estadisticos de las variables numericas de la base de datos de Kaggle</p>
+        {{table_html|safe}}
+
+        <h2>Entre otras proximamente...</h2>
+        <h4>En produccion</h4>
+    </div>
 {% endblock %}

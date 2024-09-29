@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Length, Email, ValidationError
 from app.auth.models import User
 
 def email_exists(form, field):
@@ -14,7 +14,7 @@ class RegistrationForm(FlaskForm):
     phone = StringField("phone", validators = [DataRequired(), Length(10, message="11 characters")])
     email = StringField("Email", validators = [DataRequired(), Email(), email_exists])
     password = PasswordField("Password", validators = [DataRequired()])
-    confirm = PasswordField("Confirm", validators = [DataRequired(), EqualTo("Password", message="Password must match !!!")])
+    # confirm = PasswordField("Confirm", validators = [DataRequired(), EqualTo("Password", message="Password must match !!!")])
     submit = SubmitField("Register")
     
 class LoginForm(FlaskForm):
@@ -26,7 +26,8 @@ class LoginForm(FlaskForm):
         
 class BuyForm(FlaskForm):
     """Creacion autiomatica del formulario indicando campos del la compra """
-    email = StringField("Email", validators = [DataRequired(), Email()])
-    password = PasswordField("Password", validators = [DataRequired()])
-    stay_loggedin = BooleanField("Remenber Me!")
-    submit = SubmitField("login")
+    suministro = StringField("Suministro", validators = [DataRequired()])
+    direccion = StringField("Direccion", validators = [DataRequired()])
+    departamento = StringField("Departamento", validators = [DataRequired()])
+    asunto = StringField("asunto", validators = [DataRequired()])
+    submit = SubmitField("Comprar")

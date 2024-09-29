@@ -1,5 +1,29 @@
 {% extends 'layout.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
-    <h2 class="text-c-h">Compras</h2>
+
+    <section class="center container">
+        <h2 class="text-c-h"><strong>Compras</strong></h2>
+        <div class="container" >
+            {{wtf.quick_form(data.form)}}
+        </div>
+    </section>
+
+    <div class="container t-compras">
+        <h2><strong>Lista de compras</strong></h2>
+    </div>
+
+    <section class="container flex productos">
+        {% for card in data.cards%}
+            <div class="card">
+                <h2>{{ card.suministro }}</h2>
+                <p><strong>Dirección:</strong> {{ card.direccion }}</p>
+                <p><strong>Fecha:</strong> {{ card.date.strftime('%Y-%m-%d') }}</p>
+                <p><strong>Departamento:</strong> {{ card.departamento }}</p>
+                <p><strong>Asunto:</strong> {{ card.asunto }}</p>
+            </div>
+        {%endfor%}
+    </section>    
+    
 {% endblock %}

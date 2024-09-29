@@ -123,7 +123,7 @@ img{
 
 /*footer*/
 footer{
-    background: #292929;
+    background: #222222;
     color: #fff;
     padding: 60px 80px 10px 80px;
     text-align: left;
@@ -212,3 +212,68 @@ figure {
      color: #fff;
     }
   }
+
+.grafica{
+    min-width: 100rem;
+    
+}
+
+.logo{
+    min-width: 10rem;
+}
+
+.logo2{
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* La imagen no será más grande que su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    min-width: 10rem; /* Establece un tamaño mínimo adecuado */
+}
+
+.logo3{
+    min-width: 20rem;
+}
+
+.bienvenida{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.categorias{
+    margin-top: 5rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 20px 100px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;  /* Ajusta el ancho de las tarjetas */
+    transition: transform 0.2s; /* Efecto al pasar el mouse */
+    margin: 1rem;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.productos{
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.t-compras{
+    margin-top: 2rem;
+}

@@ -6,7 +6,8 @@ from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 
-
+excel_Train = os.path.join(os.getcwd(), 'app/static', 'xlx/Data_Train.csv')
+excel_Test = os.path.join(os.getcwd(), 'app/static', 'xlx/Data_Test.csv')
 
 db = SQLAlchemy()
 Bootstrap = Bootstrap()
